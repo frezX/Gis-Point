@@ -12,8 +12,8 @@ class WordFrequency:
 
     def word_frequency(self) -> dict[str, int]:
         result: dict[str, int] = {}
-        for word_line in self.paragraph:
-            for raw_word in word_line.split():
+        for sentence in self.paragraph:
+            for raw_word in sentence.split():
                 word: str = self.format_word(word=raw_word)
                 result[word]: int = result.get(word, 0) + 1
         return result
